@@ -1,7 +1,8 @@
 package br.com.alura.loja;
 
 import br.com.alura.loja.mensagem.Mensagem;
-import br.com.alura.loja.mensagem.MensagemSMS;
+import br.com.alura.loja.mensagem.MensagemFactory;
+
 
 import javax.swing.*;
 
@@ -11,7 +12,7 @@ public class TestesMensagem {
 
         String texto = JOptionPane.showInputDialog(null);
 
-        Mensagem mensagem = new MensagemSMS(); /* ou new MessageEmail()*/
+        Mensagem mensagem = MensagemFactory.getMensagem(1);
         mensagem.enviar(texto);
     }
 }
